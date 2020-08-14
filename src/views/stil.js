@@ -41,8 +41,7 @@ export const anasayfaStyle = StyleSheet.create({
         padding:tlfonH.H(2)
     },
     notbtn:{
-        borderWidth:1,
-        borderColor:'#555'
+        padding:tlfonH.W(1)
     },
     
 });
