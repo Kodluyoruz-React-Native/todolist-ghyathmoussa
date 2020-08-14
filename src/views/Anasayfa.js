@@ -9,6 +9,7 @@ import { View as ViewA } from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ikon from '../components/Ikon';
 import temaH from '../help/temaH';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class Anasayfa extends React.Component {
 
@@ -44,22 +45,33 @@ class Anasayfa extends React.Component {
     not() {
         return (
             <ViewA animation={'bounceInLeft'} delay={250} style={anasayfaStyle.not}>
-                <Text>Sunt adipisicing sunt dolor sit est.</Text>
-                <View style={anasayfaStyle.notbtn}>
-
-                    <Ikon
-                        is={'AntDesign'}
-                        i={'delete'}
-                        c={temaH.renkler.r2}
-                        s={32}
-
-                    />
+                <Text style={anasayfaStyle.notTxt}>Sunt adipisicing sunt dolor sit est.</Text>
+                <View style={anasayfaStyle.notBtns}>
+                    {this.notBtn()}
+                    {this.notBtn()}
+                    {this.notBtn()}
 
                 </View>
 
 
             </ViewA>
         );
+    }
+
+    notBtn() {
+        return (
+            <TouchableOpacity style={anasayfaStyle.notBtnC}>
+                <Ikon
+                    is={'AntDesign'}
+                    i={'delete'}
+                    c={temaH.renkler.r4}
+                    s={32}
+
+                />
+
+            </TouchableOpacity>
+        );
+
     }
 
     render() {

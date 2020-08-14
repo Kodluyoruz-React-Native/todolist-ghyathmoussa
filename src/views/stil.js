@@ -40,7 +40,16 @@ export const anasayfaStyle = StyleSheet.create({
         marginBottom:tlfonH.H(2),
         padding:tlfonH.H(2)
     },
-    notbtn:{
+    notTxt:{
+        color:temaH.renkler.r4,
+        fontSize:16
+    },
+    notBtns:{
+        flexDirection:'row',
+        position:'absolute',
+        right:0,
+    },
+    notBtnC:{
         padding:tlfonH.W(1)
     },
     
