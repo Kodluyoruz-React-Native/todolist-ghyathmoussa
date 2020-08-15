@@ -51,7 +51,7 @@ class Anasayfa extends React.Component {
                     <Ikon 
                         is={'AntDesign'}
                         i={'left'}
-                        c={'black'}
+                        c={'#fff'}
                         s={tlfonH.W(5)}
 
                         />

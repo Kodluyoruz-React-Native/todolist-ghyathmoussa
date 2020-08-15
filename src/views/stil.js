@@ -38,7 +38,7 @@ export const anasayfaStyle = StyleSheet.create({
         backgroundColor:temaH.renkler.r1,
         marginTop:tlfonH.H(2),
         marginBottom:tlfonH.H(2),
-        padding:tlfonH.H(2)
+        padding:tlfonH.H(2),
     },
     notTxt:{
         color:temaH.renkler.r4,
@@ -51,16 +51,16 @@ export const anasayfaStyle = StyleSheet.create({
     },
     notBtnC:{
         padding:tlfonH.W(1),
-        paddingTop:0,
         alignItems:'center',
         justifyContent:'center',
-        bottom:-30
+        bottom:-36
     },
     btnOpenClose:{
         borderWidth:1,
         borderColor:'#fff',
-        right:tlfonH.W(-60),
-        borderRadius:999
+        right:tlfonH.W(-55),
+        borderRadius:999,
+        padding:tlfonH.W(3)
     },
     
 });
