@@ -6,10 +6,10 @@ import tlfonH from '../help/tlfonH';
 import { anasayfaStyle } from './stil';
 import anasayfaC from '../controller/anasayfaC';
 import { View as ViewA } from 'react-native-animatable';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ikon from '../components/Ikon';
 import temaH from '../help/temaH';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Swipeable from 'react-native-swipeable';
 
 class Anasayfa extends React.Component {
 
@@ -46,11 +46,20 @@ class Anasayfa extends React.Component {
         return (
             <ViewA animation={'bounceInLeft'} delay={250} style={anasayfaStyle.not}>
                 <Text style={anasayfaStyle.notTxt}>Sunt adipisicing sunt dolor sit est.</Text>
+
+                <TouchableOpacity style={anasayfaStyle.btnOpenClose}>
+                    <Ikon 
+                        is={'AntDesign'}
+                        i={'left'}
+                        c={'black'}
+                        s={tlfonH.W(5)}
+
+                        />
+                </TouchableOpacity>
                 <View style={anasayfaStyle.notBtns}>
                     {this.notBtn()}
                     {this.notBtn()}
                     {this.notBtn()}
-
                 </View>
 
 
