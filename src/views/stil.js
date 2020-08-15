@@ -50,7 +50,17 @@ export const anasayfaStyle = StyleSheet.create({
         right:0,
     },
     notBtnC:{
-        padding:tlfonH.W(1)
+        padding:tlfonH.W(1),
+        paddingTop:0,
+        alignItems:'center',
+        justifyContent:'center',
+        bottom:-30
+    },
+    btnOpenClose:{
+        borderWidth:1,
+        borderColor:'#fff',
+        right:tlfonH.W(-60),
+        borderRadius:999
     },
     
 });
