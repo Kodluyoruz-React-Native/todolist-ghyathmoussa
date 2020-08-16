@@ -53,14 +53,12 @@ export const anasayfaStyle = StyleSheet.create({
         padding:tlfonH.W(1),
         alignItems:'center',
         justifyContent:'center',
-        bottom:-36
+        bottom:-30
     },
     btnOpenClose:{
-        borderWidth:1,
-        borderColor:'#fff',
-        right:tlfonH.W(-55),
-        borderRadius:999,
-        padding:tlfonH.W(3)
+        right:tlfonH.W(-85),
+        padding:tlfonH.W(1),
+        top:0
     },
     
 });

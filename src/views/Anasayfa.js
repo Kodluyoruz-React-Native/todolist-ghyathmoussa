@@ -35,28 +35,33 @@ class Anasayfa extends React.Component {
     notlar() {
         return (
             <View style={anasayfaStyle.notlar}>
-                {this.not()}
-                {this.not()}
-                {this.not()}
+                {this.not(0)}
+                {this.not(1)}
+                {this.not(2)}
             </View>
         );
     }
 
-    not() {
+    not(i) {
+        
+        const btnOpen = anasayfaC.notBtnOpenClose === i;
+
         return (
-            <ViewA animation={'bounceInLeft'} delay={250} style={anasayfaStyle.not}>
+            <ViewA key={i} animation={'bounceInLeft'} delay={250} style={anasayfaStyle.not}>
                 <Text style={anasayfaStyle.notTxt}>Sunt adipisicing sunt dolor sit est.</Text>
 
-                <TouchableOpacity style={anasayfaStyle.btnOpenClose}>
+                <TouchableOpacity 
+                style={anasayfaStyle.btnOpenClose} 
+                onPress={() => anasayfaC.setNotButtomnOpen(i)}>
                     <Ikon 
                         is={'AntDesign'}
-                        i={'left'}
+                        i={btnOpen ? 'right' : 'left'}
                         c={'#fff'}
                         s={tlfonH.W(5)}
 
                         />
                 </TouchableOpacity>
-                <View style={anasayfaStyle.notBtns}>
+                <View style={[anasayfaStyle.notBtns,{display: btnOpen ? 'flex' : 'none'}]}>
                     {this.notBtn()}
                     {this.notBtn()}
                     {this.notBtn()}
