@@ -43,30 +43,19 @@ class Anasayfa extends React.Component {
     }
 
     not(i) {
-        
+
         const btnOpen = anasayfaC.notBtnOpenClose === i;
 
         return (
             <ViewA key={i} animation={'bounceInLeft'} delay={250} style={anasayfaStyle.not}>
                 <Text style={anasayfaStyle.notTxt}>Sunt adipisicing sunt dolor sit est.</Text>
+                <Text>{anasayfaC.notButonlarAcik}</Text>
 
-                <TouchableOpacity 
-                style={anasayfaStyle.btnOpenClose} 
-                onPress={() => anasayfaC.setNotButtomnOpen(i)}>
-                    <Ikon 
-                        is={'AntDesign'}
-                        i={btnOpen ? 'right' : 'left'}
-                        c={'#fff'}
-                        s={tlfonH.W(5)}
-
-                        />
-                </TouchableOpacity>
-                <View style={[anasayfaStyle.notBtns,{display: btnOpen ? 'flex' : 'none'}]}>
+                <View style={anasayfaStyle.notBtnsC}>
                     {this.notBtn()}
                     {this.notBtn()}
                     {this.notBtn()}
                 </View>
-
 
             </ViewA>
         );
@@ -75,14 +64,12 @@ class Anasayfa extends React.Component {
     notBtn() {
         return (
             <TouchableOpacity style={anasayfaStyle.notBtnC}>
-                <Ikon
+                <Ikon 
                     is={'AntDesign'}
                     i={'delete'}
                     c={temaH.renkler.r4}
-                    s={32}
-
-                />
-
+                    s={tlfonH.W(7)}
+                    />
             </TouchableOpacity>
         );
 

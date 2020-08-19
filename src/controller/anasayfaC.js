@@ -19,11 +19,11 @@ class anasayfaC {
     }
 
 
-    notBtnOpenClose = -1; //for open and close the buttons
+    notButonlarAcik = -1; //for open and close the buttons
 
-    setNotButtomnOpen = i => {
-        this.notBtnOpenClose = this.notBtnOpenClose === -i ? -1 : i;
-        alert('Test')
+    setNotButtonlarAcik = i => {
+        this.notButonlarAcik = this.notButonlarAcik === i ? -1 : i;
+        
     }
 
     set = (k, v) => this[k] = v;
@@ -37,9 +37,9 @@ decorate(
         cDUpdate: action,
         cDUMount: action,
         spalshAktif: observable,
-        notBtnOpenClose: observable,
+        notButonlarAcik: observable,
         set: action,
-        setNotButtomnOpen:action
+        setNotButtonlarAcik:action
     }
 );
 
