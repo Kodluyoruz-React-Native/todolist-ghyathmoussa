@@ -46,19 +46,28 @@ export const anasayfaStyle = StyleSheet.create({
         fontSize:16
     },
     notBtnsC:{
-        borderWidth:1,
         flexDirection:'row',
         position:'absolute',
-        bottom:-10,
+        bottom:1,
         right:10,
         backgroundColor:temaH.renkler.r1,
-        padding:tlfonH.W(1),
-        paddingTop:0,
-        borderRadius:5
+        borderRadius:5,
+        alignItems:'center',
+        justifyContent:'center',
+        paddingRight:tlfonH.W(2),
+        paddingTop:tlfonH.W(2),
+        paddingBottom:tlfonH.W(2)
     },
     notBtnC:{
-        borderWidth:1
+        marginLeft:tlfonH.W(1),
+        padding:tlfonH.W(1),
+        paddingTop:0,
     },
-    
+    btnOpen:{
+        alignSelf:'center'
+    },
+    notBtnOpen:{
+        flexDirection:'row',
+    },
     
 });
