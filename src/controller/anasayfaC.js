@@ -11,7 +11,7 @@ class anasayfaC {
     }
 
     cDUpdate = () => { //after the updating
-        LayoutAnimation.spring();
+        LayoutAnimation.easeInEaseOut();
     }
 
     cDUMount = () => { //Screen out
@@ -36,10 +36,11 @@ decorate(
         cDMount: action,
         cDUpdate: action,
         cDUMount: action,
+        set: action,
+        setNotButtonlarAcik:action,
         spalshAktif: observable,
         notButonlarAcik: observable,
-        set: action,
-        setNotButtonlarAcik:action
+        
     }
 );
 
