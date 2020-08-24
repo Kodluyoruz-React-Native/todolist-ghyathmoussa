@@ -71,3 +71,28 @@ export const anasayfaStyle = StyleSheet.create({
     },
     
 });
+
+export const oturumS = StyleSheet.create({
+	K: {
+		width: '100%',
+		marginTop: 25,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+
+	input: {
+		width: tlfonH.W(75),
+	},
+	buton: {
+		width: tlfonH.W(65)
+	},
+	butonKlavyeAcik: {
+		width: tlfonH.W(100)
+	},
+	uyeOlButon: {
+		marginTop: '20%',
+	},
+	uyeOlButonY: {
+		textDecorationLine: 'underline'
+	}
+});

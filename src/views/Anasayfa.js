@@ -9,7 +9,7 @@ import { View as ViewA } from 'react-native-animatable';
 import Ikon from '../components/Ikon';
 import temaH from '../help/temaH';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import Swipeable from 'react-native-swipeable';
+
 
 class Anasayfa extends React.Component {
 
