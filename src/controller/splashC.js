@@ -6,8 +6,8 @@ import oturumC from './oturumC';
 
 class splashC {
     cDMount = async () => {
-        Keyboard.addListener('keyboardDidShow', tlfnH.klavyeAcildi);
-        Keyboard.addListener('keyboardDidHide', tlfnH.klavyeKapandi);
+        Keyboard.addListener('keyboardDidShow', tlfnH.klaviyeAcik);
+        Keyboard.addListener('keyboardDidHide', tlfnH.klaviyeKapandi);
 
         const x = await strgH.getirOturumBilgileri();
         if (x && x.oturumDurumu === 'acik') {
