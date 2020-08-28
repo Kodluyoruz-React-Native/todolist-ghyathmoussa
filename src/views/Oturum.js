@@ -8,7 +8,7 @@ import splashC from '../controller/splashC';
 
 import { oturumS as anasayfaStyle, oturumS } from './stil';
 import Ikon from '../components/Ikon';
-import tlfnH from '../helper/tlfnH';
+import tlfonH from '../help/tlfonH';
 
 class Oturum extends React.Component {
     componentDidMount = oturumC.cDMount;
@@ -22,21 +22,21 @@ class Oturum extends React.Component {
             leftIcon: <Ikon is={'MaterialCommunityIcons'} i={'form-textbox-password'} c={'black'} />,
             secureTextEntry: true,
             keyboardType: 'number-pad',
-            containerStyle: S.input,
+            containerStyle: oturumS.input,
             contextMenuHidden: true,
             maxLength: 8,
         };
 
         return (
-            <View style={[anasayfaStyle.Container, durum === 2 && tlfnH.klavye.durum && { flex: 1 }]}>
+            <View style={[anasayfaStyle.Container, durum === 2 && tlfonH.klavye.durum && { flex: 1 }]}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <Input
                         placeholder={'E-Posta'}
                         leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'email-open'} c={'black'} />}
-                        containerStyle={S.input}
-                        value={C.email}
+                        containerStyle={oturumS.input}
+                        value={oturumC.email}
                         keyboardType={'email-address'}
-                        onChangeText={d => C.set('email', d)}
+                        onChangeText={d => oturumC.set('email', d)}
                         maxLength={60}
                     />
 
@@ -46,7 +46,7 @@ class Oturum extends React.Component {
                             placeholder={'Adınız soyadınız'}
                             leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'account'} c={'black'} />}
                             containerStyle={oturumS.input}
-                            value={C.isim}
+                            value={oturumC.isim}
                             onChangeText={d => oturumC.set('isim', d)}
                             maxLength={50}
                         />
@@ -57,9 +57,9 @@ class Oturum extends React.Component {
                         <Input
                             placeholder={'kullanıcı adınız'}
                             leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'account'} c={'black'} />}
-                            containerStyle={S.input}
-                            value={C.kullaniciAdi}
-                            onChangeText={d => C.set('kullaniciAdi', d)}
+                            containerStyle={oturumS.input}
+                            value={oturumC.kullaniciAdi}
+                            onChangeText={d => oturumC.set('kullaniciAdi', d)}
                             maxLength={50}
                         />
                     }
@@ -67,8 +67,8 @@ class Oturum extends React.Component {
                     <Input
                         {...inputProps}
                         placeholder={'Şifre'}
-                        value={C.sifre}
-                        onChangeText={d => C.set('sifre', d)}
+                        value={oturumC.sifre}
+                        onChangeText={d => oturumC.set('sifre', d)}
                     />
 
                     {
@@ -76,8 +76,8 @@ class Oturum extends React.Component {
                         <Input
                             {...inputProps}
                             placeholder={'Şifre tekrar'}
-                            value={C.sifreTekrar}
-                            onChangeText={d => C.set('sifreTekrar', d)}
+                            value={oturumC.sifreTekrar}
+                            onChangeText={d => oturumC.set('sifreTekrar', d)}
                         />
                     }
                 </ScrollView>
@@ -88,9 +88,9 @@ class Oturum extends React.Component {
                     raised
                     //icon={}
                     title={durum === 1 ? 'Oturum Aç' : 'Üye Ol'}
-                    containerStyle={[S.buton, tlfnH.klavye.durum && S.butonKlavyeAcik]}
-                    onPress={C.OTURUM}
-                    loading={C.loading}
+                    containerStyle={[oturumS.buton, tlfnH.klavye.durum && oturumS.butonKlavyeAcik]}
+                    onPress={oturumC.OTURUM}
+                    loading={oturumC.loading}
                 />
 
 
@@ -101,9 +101,9 @@ class Oturum extends React.Component {
                         //raised
                         //icon={}
                         title={durum === 2 ? 'Oturum Aç' : 'Üye Olmak için dokunun'}
-                        containerStyle={[S.uyeOlButon]}
-                        titleStyle={S.uyeOlButonY}
-                        onPress={C.uyeOlButon}
+                        containerStyle={[oturumS.uyeOlButon]}
+                        titleStyle={oturumS.uyeOlButonY}
+                        onPress={oturumC.uyeOlButon}
                     />
                 }
             </View>

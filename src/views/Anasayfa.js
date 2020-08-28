@@ -9,6 +9,7 @@ import { View as ViewA } from 'react-native-animatable';
 import Ikon from '../components/Ikon';
 import temaH from '../help/temaH';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Splash from './Splash';
 
 
 class Anasayfa extends React.Component {
@@ -100,12 +101,7 @@ class Anasayfa extends React.Component {
                 {!sa && this.notlar()}
 
 
-                <View style={!sa && anasayfaStyle.logoC}>
-                    <Resim
-                        source={require('../../asset/android/playstore-icon.png')}
-                        heghit={tlfonH.W(sa ? 50 : 10)}
-                    />
-                </View>
+                <Splash />
 
             </View>
         );

@@ -1,5 +1,5 @@
 import { observable, decorate, action } from 'mobx';
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions, Platform, Keyboard } from 'react-native';
 
 
 class tlfonH {
@@ -13,18 +13,26 @@ class tlfonH {
     and = Platform.OS === 'android';
     ios = Platform.OS === 'ios';
 
+    klaviye = { durum: false, h: 0 };
+
+    klaviyeAcik = d => this.klaviye = { durum: true, h: d.endCoordinates.h }
+    klaviyeKapandi = d => this.klaviye = { durum: false, h:0 }
+
 }
 
 decorate(
     tlfonH,
     {
         w: observable,
-        h:observable,
-        and:observable,
-        ios:observable,
-
-        W:action,
-        H:action,
+        h: observable,
+        and: observable,
+        ios: observable,
+        klaviye:observable,
+        
+        klaviyeAcik:action,
+        klaviyeKapandi:action,
+        W: action,
+        H: action,
     }
 );
 

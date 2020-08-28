@@ -1,13 +1,13 @@
 import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation, Keyboard } from 'react-native';
-import tlfnH from '../helper/tlfnH';
-import strgH from '../helper/strgH';
+import tlfnH from '../help/tlfonH';
+import strgH from '../help/strgH';
 import oturumC from './oturumC';
 
 class splashC {
     cDMount = async () => {
-        Keyboard.addListener('keyboardDidShow', tlfnH.klaviyeAcik);
-        Keyboard.addListener('keyboardDidHide', tlfnH.klaviyeKapandi);
+        Keyboard.addListener('keyboardDidShow', tlfonH.klaviyeAcik);
+        Keyboard.addListener('keyboardDidHide', tlfonH.klaviyeKapandi);
 
         const x = await strgH.getirOturumBilgileri();
         if (x && x.oturumDurumu === 'acik') {

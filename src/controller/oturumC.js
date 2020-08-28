@@ -1,9 +1,7 @@
 import { observable, action, decorate } from 'mobx';
 import splashC from './splashC';
-import fbH from '../helper/fbH';
-import uyelikM from '../models/uyelikM';
-import notM from '../models/notM';
-import strgH from '../helper/strgH';
+import fbH from '../help/fbH';
+import strgH from '../help/strgH';
 
 class oturumC {
     cDMount = async () => { }
@@ -30,26 +28,21 @@ class oturumC {
         this.loading = false;
     }
     ekleUye = async () => {
-        const x = await uyelikM.ekleUye(this.email, this.sifre, this.kullaniciAdi);
-
-        if (x.sonuc) { //üye başarıyla eklendi
-            const veri = {
-                isim: this.isim,
-                sifre: this.sifre,
-                email: this.email,
-                kullaniciAdi: this.kullaniciAdi
-            };
-
-            const y = await uyelikM.guncelleKullaniciBilgi(veri);
-
-            splashC.set('durum', 1); //oturum aç sayfasını aktif et
+        const sonuc = await uyelikM.ekleUye(this.kullaniciAdi, this.sifre);
+        if (x.sonuc) {
+            console.log(x.veri);
+        }else{
+            console.log(x,hata)
         }
-        else { //üye eklenirken hata oldu (x.hata)
-            console.log(x.hata)
-        }
+
     }
     oturumAc = async () => {
         const x = await uyelikM.oturumAc(this.email, this.sifre);
+        if (x, sonuc) { // erson has been registered
+            console.log(x, veri);
+        } else {
+            console.log(x, hata);
+        }
 
         if (x.sonuc) {
             strgH.kaydetOturumBilgileri(this.email, this.sifre, 'acik');

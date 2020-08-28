@@ -94,5 +94,19 @@ export const oturumS = StyleSheet.create({
 	},
 	uyeOlButonY: {
 		textDecorationLine: 'underline'
-	}
+    }
+});
+export const splashS = StyleSheet.create({
+    K: { //splash ekranı container
+		justifyContent: 'center',
+		alignItems: 'center',
+		width: '100%',
+		flex: 1
+	},
+	K2: { //anasayfa için splash ekranı container
+		width: null,
+		position: 'absolute',
+		left: tlfonH.W(2),
+		top: tlfonH.H(2)
+	},
 });
