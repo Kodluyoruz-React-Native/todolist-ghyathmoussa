@@ -17,11 +17,17 @@ class uyelkM {
             return { sonuc: true, veri: x }
         }
         catch (e) {
-            return {sonuc = false , veri : e}
+            return { sonuc = false, veri: e }
         }
-        oturumAc = async () => {
+    }
 
-        }
+    oturumAc = async () => {
+            
+    }
+
+    guncelleKullanciAdi = async veri => {
+        try {return { sonuc: true, veri: await fbH.guncelleKullanciAdi(this.uid, veri)};}
+        catch (e) {return { sonuc = false, veri: e }}
     }
 
 }
@@ -31,6 +37,8 @@ decorate(
     {
         ekleUye: action,
         oturumAc: action,
+        guncelleKullanciAdi:action,
+
     }
 );
 

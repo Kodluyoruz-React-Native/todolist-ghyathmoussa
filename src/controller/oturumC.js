@@ -30,6 +30,14 @@ class oturumC {
     ekleUye = async () => {
         const sonuc = await uyelikM.ekleUye(this.kullaniciAdi, this.sifre);
         if (x.sonuc) {
+            const veri = {
+                isim=this.isim,
+                sifre = this.sifre,
+                kullaniciAdi = this.kullaniciAdi,
+                email = this.email
+            }
+            const y = await uyelikM.guncelleKullanciAdi(veri);
+
             console.log(x.veri);
         }else{
             console.log(x,hata)
