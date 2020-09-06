@@ -21,8 +21,15 @@ class uyelkM {
         }
     }
 
-    oturumAc = async () => {
-            
+    oturumAc = async (kullaniciAdi,sifre) => {
+        try {
+            const x = await fbH.ekleUye(kullaniciAdi, sifre);
+            this.uid = x.user.uid;
+            return { sonuc: true, veri: x }
+        }
+        catch (e) {
+            return { sonuc = false, veri: e }
+        }
     }
 
     guncelleKullanciAdi = async veri => {

@@ -45,21 +45,14 @@ class oturumC {
 
     }
     oturumAc = async () => {
-        const x = await uyelikM.oturumAc(this.email, this.sifre);
-        if (x, sonuc) { // erson has been registered
-            console.log(x, veri);
-        } else {
-            console.log(x, hata);
-        }
-
+        const sonuc = await uyelikM.ekleUye(this.kullaniciAdi, this.sifre);
         if (x.sonuc) {
-            strgH.kaydetOturumBilgileri(this.email, this.sifre, 'acik');
-            await notM.getirNotlar(uyelikM.uid); //oturum açtıktan sonra kullanıcın notlarını getir
-            splashC.set('durum', 3); //oturum açınca anasayfaya git
-        }
-        else {
-            splashC.set('durum', 1); //oturum açılamazsa
-            console.log(x.hata)
+            
+            splashC.set('durum',3);
+            
+            
+        }else{
+            console.log(x,hata)
         }
     }
 
