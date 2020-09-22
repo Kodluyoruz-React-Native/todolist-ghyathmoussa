@@ -5,6 +5,8 @@ import fbH from '../help/fbH'
 class uyelkM {
 
     uid = '';
+    isim = '';
+    kuaniciAdi = '';
 
     ekleUye = () => {
 
@@ -25,7 +27,12 @@ class uyelkM {
         try {
             const x = await fbH.ekleUye(kullaniciAdi, sifre);
             this.uid = x.user.uid;
-            return { sonuc: true, veri: x }
+            
+            const kullaniciGiris = await fbH.getirKullanciAdi(this.uid);
+            this.isim = kullaniciGiris.isim;
+            this.kuaniciAdi = kullaniciGiris.kuaniciAdi;
+
+            return { sonuc: true, veri: kullaniciGiris }
         }
         catch (e) {
             return { sonuc = false, veri: e }

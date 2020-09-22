@@ -19,7 +19,17 @@ class fbH {
     });
 
     guncelleKullanciAdi = (uid,veri) => new Promise((olumlu, olumsuz) => {
-        db.ref(`/KULLANCILAR/${uid || 'Error'}`).set(veri).then(() => olumlu(true)).catch(e => olumsuz(e));
+        db.ref(`/KULLANCILAR/${uid || 'Error'}`)
+        .set(veri)
+        .then(() => olumlu(true))
+        .catch(e => olumsuz(e));
+    });
+
+    getirKullanciAdi = (uid) => new Promise((olumlu, olumsuz) => {
+        db.ref(`/KULLANCILAR/${uid}`)
+        .once('value')
+        .then(() => olumlu(d.val()))
+        .catch(e => olumsuz(e));
     });
 
 }
@@ -28,7 +38,8 @@ decorate(
     {
         ekleUye: action,
         oturumAc: action,
-
+        guncelleKullanciAdi:action,
+        getirKullanciAdi:action,
 
     }
 );

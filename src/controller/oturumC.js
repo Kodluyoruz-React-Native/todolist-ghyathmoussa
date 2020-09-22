@@ -45,12 +45,10 @@ class oturumC {
 
     }
     oturumAc = async () => {
-        const sonuc = await uyelikM.ekleUye(this.kullaniciAdi, this.sifre);
+        const sonuc = await uyelikM.oturumAc(this.kullaniciAdi, this.sifre);
         if (x.sonuc) {
-            
-            splashC.set('durum',3);
-            
-            
+            strgH.kaydetOturumBilgileri(thıs.kullaniciAdi,this.sifre,'acik');
+            splashC.set('durum',3);       
         }else{
             console.log(x,hata)
         }

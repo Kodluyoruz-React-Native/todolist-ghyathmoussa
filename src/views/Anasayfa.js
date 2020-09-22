@@ -10,6 +10,7 @@ import Ikon from '../components/Ikon';
 import temaH from '../help/temaH';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Splash from './Splash';
+import UyelikM from '../models/UyelikM';
 
 
 class Anasayfa extends React.Component {
@@ -22,10 +23,9 @@ class Anasayfa extends React.Component {
 
     ustAlan() {
         const sa = anasayfaC.spalshAktif;
-
         return (
             <View style={[anasayfaStyle.ustAlan, { display: sa ? 'none' : 'flex' }]}>
-                <Text style={anasayfaStyle.ustAlanY}>Test</Text>
+                <Text style={anasayfaStyle.ustAlanY}>Hello {UyelikM.isim}</Text>
                 <Text style={anasayfaStyle.ustAlanY}>Test</Text>
                 <Text style={anasayfaStyle.ustAlanY}>Test</Text>
 
